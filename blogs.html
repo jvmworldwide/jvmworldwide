@@ -55,7 +55,7 @@
     <div class="top-bar">
         <div class="container">
             <div class="contact-info">
-                <span>📍 8/334 Lalita Park, Laxmi Nagar, New Delhi - 110092,india</span>
+                <span>📍 8/334 Lalita Park, Laxmi Nagar, East Delhi.</span>
             </div>
             <div class="social-icons">
                 <a href="tel:+919220172133" title="Call Us">📞 +91-9220172133</a>
@@ -67,29 +67,47 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <!-- Updated logo to include image and text side-by-side -->
-            <a href="#home" class="logo">
-                <img src="assets/logo.jpeg" alt="JVM World Wide Travel Logo" class="navbar-logo">
-                <span>JVM World Wide Travel</span>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="services.html">Other Services</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="contactus.html">Contact Us</a></li>
-            </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+   <nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.jpeg" alt="JVM World Wide Travel" class="navbar-logo"> <!-- Assuming you have a logo.png -->
+            JVM World Wide Travel
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="dropdown">
+                <a href="services.html" class="dropdown-toggle">Services </a>
+                <ul class="submenu">
+                    <li><a href="attestation&legalization.html">ATTESTATION & LEGALIZATION</a></li>
+                    <li><a href="visaassistance.html">VISA ASSISTANCE</a></li>
+                    <li><a href="visaappointment.html">VISA APPOINTMENT</a></li>
+                    <li><a href="translationservices.html">TRANSLATION SERVICES</a></li>
+                    <li><a href="backgroundverification.html">BACKGROUND VERIFICATION</a></li>
+                    <!-- Add more main services here if needed -->
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="contactus.html" class="dropdown-toggle">Other Services </a>
+                <ul class="submenu">
+                    <li><a href="contactus.html">FOREIGN EXCHANGE</a></li>
+                    <li><a href="contactus.html">COURIERS</a></li>
+                    <li><a href="contactus.html">AIRLINE TICKETS</a></li>
+                    <li><a href="contactus.html">HOTELS</a></li>
+                    <!-- Add more other services here if needed -->
+                </ul>
+            </li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </nav>
-
+    </div>
+</nav>
+          
      <!-- Blog Section -->
     <section id="blog" class="section">
         <div class="container">

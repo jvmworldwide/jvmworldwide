@@ -1,8 +1,11 @@
-        // Mobile Navigation Toggle
         function toggleMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('active');
-        }
+    const navMenu = document.querySelector('.nav-menu');
+    navMenu.classList.toggle('active');
+    // Close all submenus when main menu toggles
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+    });
+}
 
         // Contact Modal Functions
         function openContactModal() {
@@ -107,7 +110,15 @@
             button.style.borderRadius = '5px';
             button.style.cursor = 'pointer';
         }
-
+        document.querySelectorAll('.nav-menu a:not(.dropdown-toggle)').forEach(link => {
+    link.addEventListener('click', function() {
+        document.querySelector('.nav-menu').classList.remove('active');
+        // Also close submenus
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    });
+});
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -226,10 +237,30 @@
         });
 
         document.getElementById('inquiryForm').addEventListener('submit', function() {
-            trackEvent('inquiry_form_submit', {
-                page: 'inquiry_modal',
-                source: 'auto_popup'
+                const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent navigation if it's a link
+            const dropdown = this.parentElement;
+            dropdown.classList.toggle('active');
+            
+            // Close other open dropdowns (optional, for better UX)
+            document.querySelectorAll('.dropdown').forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('active');
+                }
             });
+        });
+    });
+
+    // Close submenus when clicking outside (for mobile)
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
         });
 
         // Track contact page form submission for SEO
